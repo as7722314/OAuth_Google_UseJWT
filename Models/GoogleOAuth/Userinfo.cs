@@ -1,6 +1,6 @@
 ﻿namespace OAuthTest.Models.GoogleOAuth
 {
-    public class Userinfo
+    public record Userinfo
     {
         public string Iss { get; set; } = string.Empty;
         public string Sub { get; set; } = string.Empty;
