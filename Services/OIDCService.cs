@@ -33,7 +33,7 @@ namespace OAuthTest.Services
             return responce.IdToken;
         }
 
-        public async Task<Userinfo?> GetTokenInfo(string token)
+        public async Task<UserInfo?> GetTokenInfo(string token)
         {
             string url = $"https://oauth2.googleapis.com/tokeninfo?id_token={token}";
 
@@ -41,7 +41,7 @@ namespace OAuthTest.Services
 
             var httpClient = _httpClientFactory.CreateClient();
             var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
-            var userInfo = await httpResponseMessage.Content.ReadFromJsonAsync<Userinfo>();
+            var userInfo = await httpResponseMessage.Content.ReadFromJsonAsync<UserInfo>();
             if (userInfo is null)
             {
                 return null;

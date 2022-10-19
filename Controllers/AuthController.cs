@@ -44,7 +44,7 @@ namespace OAuthTest.Controllers
             var userInfo = await _oidcService.GetTokenInfo(idToken);
             if (userInfo is not null)
             {
-                if (userInfo.Hd.Contains("***************"))
+                if (userInfo.Hd.Contains("cloudysys.com"))
                 {
                     var jwtToken = _jwtHelpers.GenerateToken(userInfo, "admin");
                     return Ok(new { token = jwtToken });

@@ -15,7 +15,7 @@ namespace OAuthTest.Helpers
             _configuration = configuration;
         }
 
-        public string GenerateToken(Userinfo user, string role = "user", int expireMinutes = 30)
+        public string GenerateToken(UserInfo user, string role = "user", int expireMinutes = 30)
         {
             var claims = new[]
         {
